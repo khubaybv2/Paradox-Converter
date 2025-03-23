@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradox Converter | Free File Conversion</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/pdf-lib@1.17.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.11.0/dist/ffmpeg.min.js"></script>
+    <script src="https://unpkg.com/mammoth@1.4.8/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Paradox Converter" class="logo">
+        <h1>Paradox File Converter</h1>
+        <p>Free & Open-Source File Conversion</p>
+    </header>
+
+    <main>
+        <div class="converter">
+            <input type="file" id="fileInput" accept=".pdf,.docx,.mp4">
+            <select id="formatSelect">
+                <option value="pdf2jpg">PDF to JPG</option>
+                <option value="pdf2word">PDF to Word</option>
+                <option value="word2pdf">Word to PDF</option>
+                <option value="mp4tomp3">MP4 to MP3</option>
+            </select>
+            <button onclick="convertFile()">Convert Now</button>
+            
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Converting... ⚡</p>
+            </div>
+
+            <div id="previewContainer" class="preview-container"></div>
+            
+            <div id="downloadSection" class="download-section" style="display: none;">
+                <button onclick="downloadFile()" class="download-btn">Download Converted File</button>
+            </div>
+
+            <div id="errorContainer" class="error-container"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>⚡ by <a href="https://www.khubaybhossain.com" target="_blank">Khubayb Hossain</a></p>
+        <p>Open-source on <a href="https://github.com/yourusername/paradox-converter" target="_blank">GitHub</a></p>
+    </footer>
+
+    <script src="converter.js"></script>
+</body>
+</html>
